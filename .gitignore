@@ -1,0 +1,22 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+!/log/.keep
+/tmp
+
+#Ignore /bin folder
+/bin
+
+#Ignore config files
+/config/deploy.yml
+/config/database.yml
+/config/settings.yml
+
+#Ignore assets and sitemap
+/public/assets
+/public/sitemap*
+
+#Ignore vagrant files
+.vagrant
