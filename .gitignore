@@ -6,9 +6,6 @@
 !/log/.keep
 /tmp
 
-#Ignore /bin folder
-/bin
-
 #Ignore config files
 /config/deploy.yml
 /config/database.yml
