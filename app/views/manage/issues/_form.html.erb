@@ -1,0 +1,6 @@
+<%= simple_form_for [:manage, @issue] do |f| %>
+  <%= f.input :number %>
+  <%= f.input :global_id %>
+  <%= f.input :release_at %>
+  <%= f.submit %>
+<% end %>
