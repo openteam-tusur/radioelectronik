@@ -1,0 +1,6 @@
+development:
+  adapter: adapter
+  database: db_name
+  username: user_name
+  host: host
+  password: psswd

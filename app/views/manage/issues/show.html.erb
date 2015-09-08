@@ -33,9 +33,9 @@
     </div>
     <div>
       <ul>
-      <% @issue.articles.each do |article| %>
-        <li><%= article.title %><%= link_to "Change", edit_manage_issue_article_path(@issue, article) %></li>
-      <% end %>
+        <% @issue.articles.each do |article| %>
+          <li><%= article.title %><%= link_to "Change", edit_manage_issue_article_path(@issue, article) %></li>
+        <% end %>
       </ul>
     </div>
   </div>
