@@ -1,0 +1,22 @@
+ru:
+  simple_form:
+    required:
+      text: 'Обязательное для заполнения поле'
+    labels:
+      issue:
+        number: 'Номер выпуска'
+        global_id: 'Глобальный идентификатор'
+        release_at: 'Опубликовано'
+      article:
+        title: 'Заголовок'
+        article_type: 'Тип статьи'
+        annotation: 'Аннотация'
+        content: 'Текст'
+    placeholders:
+      issue:
+        number: 'Номер выпуска'
+        global_id: 'Глобальный идентификатор'
+      article:
+        title: 'Заголовок'
+        annotation: 'Аннотация'
+        content: 'Текст'

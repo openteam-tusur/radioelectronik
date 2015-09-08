@@ -1,0 +1,7 @@
+ru:
+  enumerize:
+    article_type:
+      issue_theme: Тема выпуска
+      news: Новость
+      regular: Статья
+

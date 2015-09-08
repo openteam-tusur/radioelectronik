@@ -6,6 +6,7 @@ group :default do
   gem 'coffee-rails', '~> 4.1.0'
   gem 'configliere'
   gem 'enumerize'
+  gem "breadcrumbs_on_rails"
   gem 'gravtastic'
   gem 'jbuilder', '~> 2.0'
   gem 'jquery-rails'

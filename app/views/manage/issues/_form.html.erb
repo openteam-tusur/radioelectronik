@@ -1,6 +1,12 @@
-<%= simple_form_for [:manage, @issue] do |f| %>
-  <%= f.input :number %>
-  <%= f.input :global_id %>
-  <%= f.input :release_at %>
-  <%= f.submit %>
-<% end %>
+<div class="issue_form_wrapper">
+  <ol class="breadcrumb">
+    <%= render_breadcrumbs :tag => :li, :separator => "" %>
+  </ol>
+  <%= simple_form_for [:manage, @issue], html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
+    <%= f.input :number %>
+    <%= f.input :global_id %>
+    <%= f.input :release_at %>
+    <%= f.button :submit, :class => "pull-right" %>
+    <%= link_to "Удалить", manage_issue_path(@issue), method: :delete, data: {confirm: "Вы уверены?"} unless @issue.new_record? %>
+  <% end %>
+</div>

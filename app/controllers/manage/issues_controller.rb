@@ -1,5 +1,7 @@
 class Manage::IssuesController < Manage::ApplicationController
   def new
+    add_breadcrumb "Список выпусков", manage_issue_path(Issue.last)
+    add_breadcrumb "Новый выпуск", new_manage_issue_path
     @issue = Issue.new
   end
 
@@ -15,6 +17,8 @@ class Manage::IssuesController < Manage::ApplicationController
 
   def edit
     @issue = Issue.find(params[:id])
+    add_breadcrumb "Список выпусков", manage_issue_path(@issue)
+    add_breadcrumb "Редактировать выпуск", edit_manage_issue_path(@issue)
   end
 
   def update
@@ -23,7 +27,8 @@ class Manage::IssuesController < Manage::ApplicationController
   end
 
   def destroy
-
+    Issue.find(params[:id]).destroy
+    redirect_to manage_issue_path(Issue.last)
   end
 
   private
