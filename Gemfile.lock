@@ -100,6 +100,8 @@ GEM
     daemons (1.2.3)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
+    enumerize (0.11.0)
+      activesupport (>= 3.2)
     erubis (2.7.0)
     execjs (2.6.0)
     ffi (1.9.10)
@@ -245,6 +247,7 @@ DEPENDENCIES
   auth_redis_user_connector!
   coffee-rails (~> 4.1.0)
   configliere
+  enumerize
   gravtastic
   hirb
   jbuilder (~> 2.0)

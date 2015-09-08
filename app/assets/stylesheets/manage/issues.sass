@@ -1,0 +1,50 @@
+.issues_wrapper
+  .navigation
+    a
+      font-size: 16px
+
+    .outer_list
+      li
+        position: relative
+
+        &.opened
+
+          &:after, &:before
+            position: absolute
+            content: ''
+            left: 0
+
+          &:after
+            border-left: 3px solid #337AB7
+            width: 0
+            height: 79%
+            top: 0
+
+      .inner_list
+        margin-left: 10px
+
+        li
+          margin: 0
+          position: relative
+          border: 0
+
+          &:after
+            border-left: 3px solid #337AB7
+            width: 0
+            height: 100%
+            top: 0
+
+          &:before
+            border-top: 3px solid #337AB7
+            top: 50%
+            width: 20px
+            height: 0
+
+          &:after, &:before
+            position: absolute
+            content: ''
+            left: -10px
+
+          &:last-child
+            &:after
+              height: 55%

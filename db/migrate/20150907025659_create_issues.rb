@@ -4,6 +4,7 @@ class CreateIssues < ActiveRecord::Migration
       t.integer :number
       t.integer :global_id
       t.date :release_at
+      t.string :state, :default => :draft
       t.timestamps null: false
     end
   end

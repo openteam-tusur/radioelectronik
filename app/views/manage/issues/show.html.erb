@@ -1,0 +1,34 @@
+<div class="issues_wrapper">
+  <div class="col-xs-2 navigation">
+    <ul class="nav nav-pills nav-stacked outer_list">
+      <% @issues.each do |key, value| %>
+        <li class="js-toggle-inner-list <%= show_inner_list?(value, @issue) ? "opened" : "closed" %>">
+          <%= link_to "#" do %>
+            <span class="glyphicon <%= show_inner_list?(value, @issue) ? "glyphicon-minus" : "glyphicon-plus" %>" aria-hidden="true"></span>
+            <span><%= key %></span>
+          <% end %>
+          <ul class="nav nav-pills nav-stacked inner_list <%= show_inner_list?(value, @issue)? "show": "hidden" %>">
+            <% value.each do |issue| %>
+              <%= content_tag :li, class: issue == @issue ? 'active' : nil do %>
+                <%= link_to issue.global_id, manage_issue_path(issue) %>
+              <% end %>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-xs-10">
+    <div class="btn-group pull-right clearfix" role="group">
+        <%= link_to "Опубликовать", "#", class: "btn btn-success" %>
+        <%= link_to "Изменить", edit_manage_issue_path(@issue), class: "btn btn-warning" %>
+        <%= link_to new_manage_issue_path, class: "btn btn-primary"  do %>
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          <span>Добавить выпуск</span>
+        <% end %>
+      </button>
+    </div>
+    Articles!!!
+  </div>
+</div>
+

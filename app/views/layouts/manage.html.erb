@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Radioelectronik</title>
+  <%= stylesheet_link_tag    'manage/application', media: 'all' %>
+  <%= javascript_include_tag 'manage/application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'navigation' %>
+  <div class="container">
+    <div class="row manage-wrapper">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

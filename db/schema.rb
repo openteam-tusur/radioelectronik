@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150907054554) do
     t.string   "article_type"
     t.text     "annotation"
     t.text     "content"
+    t.integer  "issue_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -29,8 +30,9 @@ ActiveRecord::Schema.define(version: 20150907054554) do
     t.integer  "number"
     t.integer  "global_id"
     t.date     "release_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "state",      default: "draft"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
 end
