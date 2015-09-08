@@ -22,7 +22,8 @@ class Manage::IssuesController < Manage::ApplicationController
   end
 
   def update
-    @issue = Issue.update(issue_params)
+    @issue = Issue.find(params[:id])
+    @issue.update(issue_params)
     respond_with :manage, @issue
   end
 

@@ -7,9 +7,9 @@ class Manage::ArticlesController < Manage::ApplicationController
   end
 
   def create
-    issue = Issue.find(params[:issue_id])
-    @article = issue.articles.create(article_params)
-    respond_with :manage, issue, @article, location: -> { manage_issue_path(issue) }
+    @issue = Issue.find(params[:issue_id])
+    @article = @issue.articles.create(article_params)
+    respond_with :manage, @issue, @article, location: -> { manage_issue_path(@issue) }
   end
 
   def edit
@@ -20,9 +20,10 @@ class Manage::ArticlesController < Manage::ApplicationController
   end
 
   def update
-    issue = Issue.find(params[:issue_id])
-    @article = Article.find(params[:id]).update(article_params)
-    respond_with :manage, issue, @article, location: -> { manage_issue_path(issue) }
+    @issue = Issue.find(params[:issue_id])
+    @article = Article.find(params[:id])
+    @article.update(article_params)
+    respond_with :manage, @issue, @article, location: -> { manage_issue_path(@issue) }
   end
 
   def destroy
