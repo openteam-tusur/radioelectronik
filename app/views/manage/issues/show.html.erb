@@ -22,21 +22,45 @@
       <% end %>
     </ul>
   </div>
-  <div class="col-xs-9">
-    <div class="btn-group pull-right clearfix" role="group">
-        <%= link_to "Опубликовать", "#", class: "btn btn-success" %>
-        <%= link_to "Изменить", edit_manage_issue_path(@issue), class: "btn btn-warning" %>
-        <%= link_to new_manage_issue_article_path(@issue), class: "btn btn-primary"  do %>
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          <span>Добавить новость</span>
-        <% end %>
+  <div class="col-xs-9 content">
+    <div class="btn-group pull-right button_wrapper" role="group">
+      <% if @issue.published? %>
+        <%= link_to "В черновик", manage_issue_path(@issue, issue: {state: :draft}), method: :put, class: "btn btn-danger" %>
+      <% else %>
+        <%= link_to "Опубликовать", manage_issue_path(@issue, issue: {state: :published}), method: :put, class: "btn btn-success" %>
+      <% end %>
+
+      <%= link_to "Изменить", edit_manage_issue_path(@issue), class: "btn btn-warning" %>
+      <%= link_to new_manage_issue_article_path(@issue), class: "btn btn-primary"  do %>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        <span>Добавить новость</span>
+      <% end %>
     </div>
-    <div>
-      <ul>
-        <% @issue.articles.each do |article| %>
-          <li><%= article.title %><%= link_to "Change", edit_manage_issue_article_path(@issue, article) %></li>
+    <div class="row articles_wrapper">
+      <% if @issue.articles_collection.present?  %>
+        <% if @issue.articles_collection["issue_theme"].present? %>
+          <div class="col-xs-4">
+            <div class="issue_theme">
+              <p> <%= @issue.articles_collection["issue_theme"].title %> </p>
+              <p> <%= @issue.articles_collection["issue_theme"].annotation %> </p>
+              <%= render :partial => 'manage_links', locals: {article_type: @issue.articles_collection["issue_theme"]} %>
+            </div>
+          </div>
         <% end %>
-      </ul>
+        <% if @issue.articles_collection["regular"].present? %>
+          <% @issue.articles_collection["regular"].each do |article| %>
+            <div class="col-xs-4">
+              <div class="regular">
+                <p> <%= article.title %> </p>
+                <p> <%= article.annotation %> </p>
+                <%= render :partial => 'manage_links', locals: {article_type: article}%>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h1>Не добавлено ни одной новости в выпуск журнала</h1>
+      <% end %>
     </div>
   </div>
 </div>

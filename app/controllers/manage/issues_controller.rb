@@ -1,4 +1,8 @@
 class Manage::IssuesController < Manage::ApplicationController
+  def index
+    redirect_to manage_issue_path(Issue.last)
+  end
+
   def new
     add_breadcrumb "Список выпусков", manage_issue_path(Issue.last)
     add_breadcrumb "Новый выпуск", new_manage_issue_path
@@ -34,7 +38,7 @@ class Manage::IssuesController < Manage::ApplicationController
 
   private
     def issue_params
-      params.require(:issue).permit(:number, :global_id, :release_at)
+      params.require(:issue).permit(:number, :global_id, :release_at, :state)
     end
 
     def issue_years

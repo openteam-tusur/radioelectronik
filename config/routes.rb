@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root :to => 'welcome#index'
 
   namespace :manage do
-    resources :issues, :except => [:index] do
+    resources :issues do
       resources :articles, :except => [:index, :show]
     end
     resources :permissions, :except => [:edit, :update]
