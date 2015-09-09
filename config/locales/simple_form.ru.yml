@@ -12,6 +12,9 @@ ru:
         article_type: 'Тип статьи'
         annotation: 'Аннотация'
         content: 'Текст'
+      permission:
+        name: "Имя пользователя"
+        role: "Роль"
     placeholders:
       issue:
         number: 'Номер выпуска'
@@ -20,3 +23,5 @@ ru:
         title: 'Заголовок'
         annotation: 'Аннотация'
         content: 'Текст'
+      permission:
+        name: "Начните вводить ФИО пользователя"

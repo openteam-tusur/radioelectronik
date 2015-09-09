@@ -2,3 +2,6 @@ ru:
   page_title:
     application:
       index: "Газета «Радиоэлектроник»"
+  role_names:
+    admin: "Администратор"
+    editor: "Редактор"
