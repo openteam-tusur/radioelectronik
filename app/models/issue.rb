@@ -7,7 +7,7 @@ class Issue < ActiveRecord::Base
   extend Enumerize
   enumerize :state, in: [:draft, :published], predicates: true
 
-  default_scope {order('release_at')}
+  default_scope {order('release_at desc')}
 
   def articles_collection
     @articles_collection ||= %w(issue_theme regular news).inject({}){ |hash, key|
