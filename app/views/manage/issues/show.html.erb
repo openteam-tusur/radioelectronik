@@ -42,7 +42,7 @@
           <div class="col-xs-4">
             <div class="issue_theme">
               <p> <%= @issue.articles_collection["issue_theme"].title %> </p>
-              <p> <%= @issue.articles_collection["issue_theme"].annotation %> </p>
+              <p> <%= @issue.articles_collection["issue_theme"].annotation.truncate(350).html_safe %> </p>
               <%= render :partial => 'manage_links', locals: {article_type: @issue.articles_collection["issue_theme"]} %>
             </div>
           </div>
@@ -52,7 +52,21 @@
             <div class="col-xs-4">
               <div class="regular">
                 <p> <%= article.title %> </p>
-                <p> <%= article.annotation %> </p>
+                <p> <%= article.annotation.truncate(150).html_safe %> </p>
+                <%= render :partial => 'manage_links', locals: {article_type: article}%>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <% if @issue.articles_collection["news"].present? %>
+          <div class="col-xs-12">
+            <h3>Новости выпуска</h3>
+          </div>
+          <% @issue.articles_collection["news"].each do |article| %>
+            <div class="col-xs-12">
+              <div class="news">
+                <p> <%= article.title %> </p>
+                <p> <%= article.annotation.html_safe %> </p>
                 <%= render :partial => 'manage_links', locals: {article_type: article}%>
               </div>
             </div>

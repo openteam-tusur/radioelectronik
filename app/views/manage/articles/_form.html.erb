@@ -5,8 +5,8 @@
   <%= simple_form_for [:manage, @issue, @article], html: { class: 'form-horizontal' }, wrapper: :horizontal_form do |f| %>
     <%= f.input :title %>
     <%= f.input :article_type %>
-    <%= f.input :annotation %>
-    <%= f.input :content %>
+    <%= f.input :annotation, input_html: {class: :ckeditor} %>
+    <%= f.input :content, input_html: {class: :ckeditor}%>
     <%= f.button :submit, class: "pull-right" %>
     <%= link_to "Удалить", manage_issue_article_path(@issue, @article), method: :delete, data: {confirm: "Вы уверены?"} unless @article.new_record? %>
   <% end %>

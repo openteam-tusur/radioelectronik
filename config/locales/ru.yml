@@ -1,7 +1,11 @@
 ru:
+  app:
+    title: 'Газета «Радиоэлектроник»'
+
   page_title:
     application:
       index: "Газета «Радиоэлектроник»"
+
   role_names:
     admin: "Администратор"
     editor: "Редактор"

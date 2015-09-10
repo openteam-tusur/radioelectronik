@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => 'welcome#index'
+  mount ElVfsClient::Engine => '/'
 
   namespace :manage do
     resources :issues do
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :users, :only => [] do
     get 'search', :on => :collection
   end
+
+  root :to => 'welcome#index'
 end

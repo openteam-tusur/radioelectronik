@@ -13,7 +13,7 @@
         <tr>
           <td> <%= permission.user %> </td>
           <td> <%= permission.role_text %> </td>
-          <td> <%= mail_to permission.user.email %> </td>
+          <td> <%= mail_to permission.user.try(:email) %> </td>
           <td>
             <%= link_to manage_permission_path(permission), :method => :delete, :data => { :confirm => 'Вы увурены?'  } do %>
               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
