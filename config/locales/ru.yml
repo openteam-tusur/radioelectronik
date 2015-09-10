@@ -9,3 +9,9 @@ ru:
   role_names:
     admin: "Администратор"
     editor: "Редактор"
+
+  activerecord:
+    models:
+      issue: "выпуск"
+      article: "материал"
+      permission: "право доступа"
