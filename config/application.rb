@@ -6,7 +6,7 @@ Bundler.require(*Rails.groups)
 
 module Radioelectronik
   class Application < Rails::Application
-    config.time_zone = 'Novosibirsk'
+    config.time_zone = 'Krasnoyarsk'
     config.i18n.default_locale = :ru
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(
