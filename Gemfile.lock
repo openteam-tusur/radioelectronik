@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/openteam-tusur/auth_client
-  revision: 6c8b820338746c7dc902d9b98188e0007801f0cc
+  revision: d9fdeee0cf40656fe2b92342ed6a1fa7e99e5349
   specs:
-    auth_client (0.0.3)
+    auth_client (0.0.5)
       activesupport
       auth_redis_user_connector
       configliere
@@ -11,7 +11,7 @@ GIT
 
 GIT
   remote: https://github.com/openteam-tusur/auth_redis_user_connector
-  revision: 08e22a9664d4f1be9209041176c39b3e0969ea5f
+  revision: a64ce48eb63b622b815746b9926087977297423f
   specs:
     auth_redis_user_connector (0.0.8)
       hiredis
@@ -100,7 +100,7 @@ GEM
       highline (= 1.5.2)
       multi_json (~> 1.10.1)
     curb (0.8.8)
-    daemons (1.2.3)
+    daemons (1.2.4)
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     el_vfs_client (0.4.4)
@@ -113,13 +113,13 @@ GEM
     esp-ckeditor (0.1.6)
     execjs (2.6.0)
     ffi (1.9.10)
-    globalid (0.3.6)
+    globalid (0.3.7)
       activesupport (>= 4.1.0)
     gravtastic (3.2.6)
     highline (1.5.2)
     hike (1.2.3)
     hirb (0.7.3)
-    hiredis (0.6.0)
+    hiredis (0.6.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -136,15 +136,15 @@ GEM
     kgio (2.10.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.3)
-      mime-types (>= 1.16, < 3)
-    mime-types (2.6.1)
-    mini_portile (0.6.2)
-    minitest (5.8.0)
+    mail (2.6.4)
+      mime-types (>= 1.16, < 4)
+    mime-types (2.99.3)
+    mini_portile2 (2.1.0)
+    minitest (5.10.1)
     multi_json (1.10.1)
     netrc (0.10.3)
-    nokogiri (1.6.6.2)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     openteam-commons (0.2.4)
       airbrake
       configliere
@@ -152,7 +152,7 @@ GEM
       unicorn
       whenever
     pg (0.18.3)
-    rack (1.6.4)
+    rack (1.6.5)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.4)
@@ -172,7 +172,7 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
     railties (4.2.4)
       actionpack (= 4.2.4)
@@ -180,11 +180,11 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     raindrops (0.15.0)
-    rake (10.4.2)
+    rake (10.5.0)
     rb-fsevent (0.9.6)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    redis (3.2.1)
+    redis (3.3.2)
     redis-session-store (0.8.0)
       actionpack (>= 3, < 5)
       redis
@@ -220,7 +220,7 @@ GEM
     stop_ie (0.1.5)
       jquery-rails
       sass-rails (>= 3.2)
-    thor (0.19.1)
+    thor (0.19.4)
     thread_safe (0.3.5)
     tilt (1.4.1)
     tusur_header (0.2.5)
@@ -280,4 +280,4 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.10.6
+   1.13.6
